@@ -33,7 +33,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        @auth
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('products.index') }}">{{ __('Products') }}</a>
+                            </li>
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -75,7 +79,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4" id="app">
             @yield('content')
         </main>
     </div>
